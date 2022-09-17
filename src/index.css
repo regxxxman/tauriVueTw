@@ -1,0 +1,16 @@
+/* ./src/index.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  background: transparent !important;
+}
+
+body {
+  background: rgba(100, 116, 139, 0.5);
+  overflow: hidden;
+  /* height: 100vh; */
+  /* width: 100wh; */
+}
