@@ -1,10 +1,48 @@
 <script setup>
 import { appWindow } from '@tauri-apps/api/window'
-
 </script>
 
 <template>
-  <div data-tauri-drag-region class="titlebar">
+  <div>
+    <div class="flex bg-slate-500">
+      <!-- <button @click="Menu()" class="ml-2 text-white material-symbols-rounded">
+        menu
+      </button> -->
+
+      <div
+        data-tauri-drag-region
+        class="w-full h-6 flex justify-end text-white"
+      >
+        <!-- <div class="justify-center">title</div> -->
+        <button
+          @click="appWindow.minimize()"
+          class="bg-green-500 hover:bg-opacity-50 h-full w-6 rounded-lg mx-1"
+        >
+          <span class="material-symbols-rounded opacity-0 hover:opacity-100">
+            expand_more
+          </span>
+        </button>
+
+        <button
+          @click="appWindow.toggleMaximize()"
+          class="bg-yellow-500 hover:bg-opacity-50 h-full w-6 rounded-lg mx-1"
+        >
+          <span class="material-symbols-rounded opacity-0 hover:opacity-100">
+            open_in_full
+          </span>
+        </button>
+        <button
+          @click="appWindow.close()"
+          class="bg-red-500 hover:bg-opacity-50 h-full w-6 rounded-lg mx-1 mr-2"
+        >
+          <span class="material-symbols-rounded opacity-0 hover:opacity-100">
+            close
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- <div data-tauri-drag-region class="titlebar">
     <div
       @click="appWindow.minimize()"
       class="titlebar-button"
@@ -24,48 +62,22 @@ import { appWindow } from '@tauri-apps/api/window'
     <div @click="appWindow.close()" class="titlebar-button" id="titlebar-close">
       <span class="material-symbols-rounded"> close </span>
     </div>
-  </div>
+  </div> -->
 </template>
 
+<script>
+export default {
+  methods: {
+    Menu() {
+      alert('menu')
+    },
+  },
+}
+</script>
+
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0');
-
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
 .material-symbols-rounded {
-  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
-}
-
-#titlebar-minimize {
-  color: green;
-}
-
-#titlebar-maximize {
-  color: yellow;
-}
-
-#titlebar-close {
-  color: red;
-}
-
-.titlebar {
-  height: 30px;
-  /* background: #329da388; */
-  background: rgba(0, 0, 0, 0.178);
-  user-select: none;
-  display: flex;
-  justify-content: flex-end;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-.titlebar-button {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-}
-.titlebar-button:hover {
-  background: #5bbec393;
+  font-variation-settings: 'FILL' 0, 'wght' 700, 'GRAD' 0, 'opsz' 48;
 }
 </style>
