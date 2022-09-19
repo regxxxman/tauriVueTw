@@ -1,10 +1,12 @@
 <script setup>
 import MenuWindow from './components/MenuWindow.vue'
+import MenuOptions from './components/MenuOptions.vue'
 // import MenuWindow from './components/MenuWindow.vue'
 </script>
 
 <template>
   <MenuWindow />
+
   <!-- <ul
     class="z-50 absolute menu w-56 p-2 rounded-box bg-slate-500 bg-opacity-50 backdrop-blur-sm"
   >
@@ -35,8 +37,9 @@ import MenuWindow from './components/MenuWindow.vue'
       <div class="h-10"></div>
     </div>
   </div>
+  <MenuOptions />
 
-  <div
+  <!-- <div
     class="bg-slate-500 bg-opacity-50 backdrop-blur-sm absolute h-full w-1/3"
   >
     <ul class="z-50 text-center w-full absolute menu p-2 rounded-box">
@@ -44,8 +47,7 @@ import MenuWindow from './components/MenuWindow.vue'
       <li><a>Item 2</a></li>
       <li><a>Item 3</a></li>
     </ul>
-  </div>
-
+  </div> -->
   <!-- <MenuWindow /> -->
 </template>
 
