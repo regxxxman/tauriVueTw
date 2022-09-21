@@ -37,7 +37,7 @@ import MenuOptions from './components/MenuOptions.vue'
       <div class="h-10"></div>
     </div>
   </div>
-  <MenuOptions />
+  <!-- <MenuOptions /> -->
 
   <!-- <div
     class="bg-slate-500 bg-opacity-50 backdrop-blur-sm absolute h-full w-1/3"
